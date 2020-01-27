@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from colorama import Fore, Style
 import colorama
 import time
