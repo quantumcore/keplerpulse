@@ -1,3 +1,3 @@
-mv keplerpulse.py /usr/bin/keplerpulse
+cp keplerpulse.py /usr/bin/keplerpulse
 echo "Done."
 
